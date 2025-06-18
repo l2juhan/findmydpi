@@ -3,6 +3,7 @@ package findmydpi.main;
 
 import findmydpi.clickthebox.ClickTestPanel;
 import findmydpi.clickthebox.ClickPracticePanel;
+import findmydpi.textcopyandpaste.TextPracticePanel;
 import findmydpi.textcopyandpaste.TextTestPanel;
 
 import javax.swing.*;
@@ -30,18 +31,20 @@ public class MainFrame extends JFrame {
         ClickTestPanel clickTestPanel       = new ClickTestPanel();
         ClickPracticePanel clickPracticePanel = new ClickPracticePanel();
         TextTestPanel textTestPanel         = new TextTestPanel();
+        TextPracticePanel textPracticePanel    = new TextPracticePanel();
 
         // 3) Test/Practice 패널에 navigation 정보 세팅
         clickTestPanel.setNavigation(cards, cardLayout);
         clickPracticePanel.setNavigation(cards, cardLayout);
         textTestPanel.setNavigation(cards, cardLayout);
+        textPracticePanel.setNavigation(cards, cardLayout);
 
         // 4) cards에 패널 추가 (키: MAIN, CLICK_TEST, CLICK_PRACTICE, TEXT_TEST, TEXT_PRACTICE)
         cards.add(mainPanel,         "MAIN");
         cards.add(clickTestPanel,    "CLICK_TEST");
         cards.add(clickPracticePanel,"CLICK_PRACTICE");
         cards.add(textTestPanel,     "TEXT_TEST");
-        cards.add(textTestPanel,     "TEXT_PRACTICE");
+        cards.add(textPracticePanel,     "TEXT_PRACTICE");
 
         // 5) JFrame에 cards 부착 후 초기 화면 설정
         add(cards);
@@ -51,5 +54,6 @@ public class MainFrame extends JFrame {
         mainPanel.setClickTestPanel(clickTestPanel);
         mainPanel.setClickPracticePanel(clickPracticePanel);
         mainPanel.setTextTestPanel(textTestPanel);
+        mainPanel.setTextPracticePanel(textPracticePanel);
     }
 }

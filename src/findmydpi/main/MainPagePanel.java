@@ -3,6 +3,7 @@ package findmydpi.main;
 
 import findmydpi.clickthebox.ClickPracticePanel;
 import findmydpi.clickthebox.ClickTestPanel;
+import findmydpi.textcopyandpaste.TextPracticePanel;
 import findmydpi.textcopyandpaste.TextTestPanel;
 
 import javax.swing.*;
@@ -24,6 +25,7 @@ public class MainPagePanel extends BackgroundPanel {
     private ClickTestPanel clickTestPanel;
     private ClickPracticePanel clickPracticePanel;
     private TextTestPanel textTestPanel;
+    private TextPracticePanel textPracticePanel;
 
     private static final Map<String,String> desc = new HashMap<>();
     static {
@@ -82,7 +84,7 @@ public class MainPagePanel extends BackgroundPanel {
                     textTestPanel.startTest();
                     cardLayout.show(cards, "TEXT_TEST");
                 } else {
-                    textTestPanel.startPractice();
+                    textPracticePanel.startPractice();
                     cardLayout.show(cards, "TEXT_PRACTICE");
                 }
             }
@@ -99,6 +101,9 @@ public class MainPagePanel extends BackgroundPanel {
     }
     public void setTextTestPanel(TextTestPanel tp) {
         this.textTestPanel = tp;
+    }
+    public void setTextPracticePanel(TextPracticePanel pp) {
+        this.textPracticePanel = pp;
     }
 
     // 감도 설정 안내
@@ -124,7 +129,7 @@ public class MainPagePanel extends BackgroundPanel {
         d.setLayout(new BorderLayout());
         d.add(new JScrollPane(pic),BorderLayout.CENTER);
         d.add(new JScrollPane(ta),BorderLayout.SOUTH);
-        d.setSize(800,800);
+        d.setSize(1000,1000);
         d.setLocationRelativeTo(this);
         d.setVisible(true);
     }
